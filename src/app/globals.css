@@ -1,49 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary-blue: #11233E;
+  --color-accent-gold: #C9C12C;
+  --color-neutral-silver: #E2E8F0;
+  --color-bg-soft-blue: #F4F7FA;
+
+  --font-sans: var(--font-open), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-darker), serif;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-up {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slow-drift {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(1deg);
+    }
+  }
+
+  @keyframes particle-float {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(50px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes liquid-mesh {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  --animate-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-up: scale-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slow-drift: slow-drift 8s ease-in-out infinite;
+  --animate-particle-float: particle-float 20s linear infinite;
+  --animate-liquid-mesh: liquid-mesh 10s ease infinite;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 216 56% 28%; /* #1F3E6E */
+  
+  --primary-blue: #1F3E6E;
+  --accent-gold: #C9C12C;
+  --neutral-silver: #AAAFB5;
+  --bg-soft-blue: 216 20% 97%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-white text-[var(--primary-blue)] font-sans antialiased;
   }
 }
 
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer utilities {
+  .animate-delay-200 {
+    animation-delay: 0.2s;
   }
+  .animate-delay-450 {
+    animation-delay: 0.45s;
+  }
+  .animate-delay-650 {
+    animation-delay: 0.65s;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: #AAAFB5;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1F3E6E;
 }
