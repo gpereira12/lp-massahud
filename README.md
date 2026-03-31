@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🩺 Massahud Diagnósticos | Dr. Paulo Massahud
 
-## Getting Started
+> **Ultrassonografia Humanizada e Diagnóstico Preciso em Belo Horizonte.**
 
-First, run the development server:
+Este projeto é uma Landing Page de alta performance desenvolvida para a clínica **Massahud Diagnósticos**, sob a liderança do **Dr. Paulo Massahud**. O objetivo central é unir autoridade médica, tecnologia de ponta e um design que transmite acolhimento e segurança para pacientes obstétricos e diagnósticos.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💎 O Conceito (Brand Soul)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A identidade visual e a experiência do usuário foram projetadas para refletir o equilíbrio entre a frieza da precisão técnica e o calor do atendimento humano.
+- **Design System:** Baseado em tons de Azul Naval (Autoridade) e Ouro Acetinado (Otimismo/Vida).
+- **UX Premium:** Interface fluida com animações de "Liquid Mesh" que simbolizam o ambiente uterino e a fluidez diagnóstica.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Stack Tecnológica
 
-To learn more about Next.js, take a look at the following resources:
+O projeto utiliza o que há de mais moderno no ecossistema Frontend para garantir velocidade (Core Web Vitals) e indexação (SEO):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Core:** [Next.js 14+](https://nextjs.org/) (App Router).
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/) para segurança de tipos.
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/) com design system customizado.
+- **Animações:** [Framer Motion](https://www.framer.com/motion/) para interações e transições suaves.
+- **SEO/AEO:** Implementação completa de Metadados, `robots.ts`, `sitemap.ts` e dados estruturados (JSON-LD) para alta performance em motores de busca e assistentes de IA.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📊 Inteligência de Dados & Marketing (Tracking)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A arquitetura foi preparada para campanhas de tráfego pago (Google Ads e Meta) de alta conversão:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Central de Analytics Segura
+Os IDs de rastreamento são gerenciados via **variáveis de ambiente** (`.env.local`), evitando exposição de chaves no repositório.
+- **Google Tag Manager (GTM)**
+- **Google Analytics 4 (GA4)**
+- **Google Ads Tracking**
+- **Meta Pixel (Facebook)**
+
+### 2. Mapeamento de Cliques (Tagging)
+Todos os pontos de conversão possuem IDs exclusivos para facilitar a criação de gatilhos no GTM/Ads:
+- `cta-nav-button`: Agendamentos via menu superior.
+- `cta-hero-whatsapp`: Conversão direta no topo da página.
+- `cta-hero-google`: Engajamento com prova social (avaliações).
+- `cta-exames-agendar`: Interesse gerado na grade de exames.
+- `cta-faq-whatsapp`: Conversão após sanar dúvidas.
+- `cta-footer-whatsapp`: Contato no encerramento da jornada.
+
+---
+
+## 🛠️ Configuração e Instalação
+
+1. **Clonar o projeto:**
+   ```bash
+   git clone https://github.com/gpereira12/lp-massahud.git
+   ```
+
+2. **Instalar dependências:**
+   ```bash
+   npm install
+   ```
+
+3. **Configurar Variáveis de Ambiente:**
+   Crie um arquivo `.env.local` na raiz e adicione seus IDs:
+   ```env
+   NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+   NEXT_PUBLIC_ADS_ID=AW-XXXXXXXXXXX
+   NEXT_PUBLIC_FB_PIXEL_ID=XXXXXXXXXXXXXXX
+   ```
+
+4. **Rodar em desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 👤 Créditos
+
+- **Projeto:** [Massahud Diagnósticos](https://massahuddiagnosticos.com.br)
+- **Desenvolvimento:** [Gabriel Pereira](https://dev-gabriel-pereira-gp.web.app/)
