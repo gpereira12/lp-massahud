@@ -1,19 +1,36 @@
 import type { Metadata, Viewport } from "next";
-import { Darker_Grotesque, Open_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 import { ANALYTICS_CONFIG } from "@/config/analytics";
 
-const darkerGrotesque = Darker_Grotesque({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-darker",
+const darkerGrotesque = localFont({
+  src: [
+    { path: "./fonts/DarkerGrotesque-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/DarkerGrotesque-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/DarkerGrotesque-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/DarkerGrotesque-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/DarkerGrotesque-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/DarkerGrotesque-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "./fonts/DarkerGrotesque-Black.ttf", weight: "900", style: "normal" },
+  ],
+  variable: "--font-massahud-serif",
 });
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-open",
+const openSans = localFont({
+  src: [
+    { path: "./fonts/OpenSans-Light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/OpenSans-LightItalic.ttf", weight: "300", style: "italic" },
+    { path: "./fonts/OpenSans-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/OpenSans-Italic.ttf", weight: "400", style: "italic" },
+    { path: "./fonts/OpenSans-Semibold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/OpenSans-SemiboldItalic.ttf", weight: "600", style: "italic" },
+    { path: "./fonts/OpenSans-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/OpenSans-BoldItalic.ttf", weight: "700", style: "italic" },
+    { path: "./fonts/OpenSans-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "./fonts/OpenSans-ExtraBoldItalic.ttf", weight: "800", style: "italic" },
+  ],
+  variable: "--font-massahud-sans",
 });
 
 export const metadata: Metadata = {
@@ -67,8 +84,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${darkerGrotesque.variable} ${openSans.variable} font-open antialiased`}>
+    <html lang="pt-BR" className={`${darkerGrotesque.variable} ${openSans.variable} scroll-smooth`}>
+      <body className="font-sans antialiased text-[var(--primary-blue)] relative">
         {/* Google Tag Manager (Script Cabeçalho) */}
         {ANALYTICS_CONFIG.GTM_ID !== "GTM-XXXXXXX" && (
           <Script

@@ -38,7 +38,7 @@ const Especialista = () => {
           <div className="mb-8">
             <p className="text-2xl font-serif font-black text-[var(--primary-blue)] mb-1">Dr. Paulo Massahud</p>
             <span className="text-sm font-sans tracking-[0.2em] text-[var(--neutral-gray)] font-bold uppercase block">
-              CRM 12.345 / RQE 6.789
+              CRM 30.491 / RQE 56695
             </span>
           </div>
 
@@ -51,7 +51,7 @@ const Especialista = () => {
             </p>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-12 w-full">
             <WhatsAppButton 
               id="cta-especialista-whatsapp"
               variant="primary" 
@@ -60,6 +60,22 @@ const Especialista = () => {
               Falar com a equipe do Dr. Paulo
             </WhatsAppButton>
           </div>
+
+          {/* New Photo Below Text for Mobile/Desktop context */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 w-full lg:hidden block"
+          >
+             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+                <img 
+                  src="/images/IMG_5922.webp" 
+                  alt="Dr. Paulo Massahud" 
+                  className="w-full aspect-[4/3] object-cover"
+                />
+             </div>
+          </motion.div>
         </div>
 
         {/* Right Side: Doctor's Image */}

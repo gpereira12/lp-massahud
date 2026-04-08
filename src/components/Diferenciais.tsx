@@ -72,31 +72,11 @@ const Diferenciais = () => {
           ))}
         </div>
 
-        <div className="mt-24 flex flex-col items-center gap-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10 p-2">
-            <WhatsAppButton variant="primary" className="text-lg px-12 py-5 shadow-2xl">
-              Agendar consulta agora
-            </WhatsAppButton>
-            
-            <a 
-              href="https://www.google.com/maps/place/Massahud+Diagn%C3%B3sticos+Ltda/@-19.9283077,-43.9205385,17z/data=!4m8!3m7!1s0xa6996255b40aad:0xdc5d6c977a1cd3e2!8m2!3d-19.9283077!4d-43.9205385!9m1!1b1!16s%2Fg%2F11st_h59yx?hl=pt-BR&entry=ttu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-slate-100 group"
-            >
-              <GoogleIcon className="w-5 h-5" />
-              <div className="flex flex-col">
-                <div className="flex gap-0.5 text-[#FBBC05] mb-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <StarIcon key={i} className="w-3.5 h-3.5" />
-                  ))}
-                </div>
-                <span className="text-[10px] font-bold text-[var(--primary-blue)] uppercase tracking-wider">
-                  Avaliação 5.0 no Google
-                </span>
-              </div>
-            </a>
-          </div>
+        <div className="mt-24 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+
+          <WhatsAppButton variant="primary" className="text-lg px-12 py-5 shadow-2xl">
+            Agendar exame agora
+          </WhatsAppButton>
         </div>
       </div>
 

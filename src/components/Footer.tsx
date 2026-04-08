@@ -28,7 +28,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const whatsappUrl = "https://wa.me/553136435473?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Paulo%20Massahud.";
+  const whatsappUrl = "https://wa.me/553136435473?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20exame%20com%20o%20Dr.%20Paulo%20Massahud.";
 
   return (
     <footer className="bg-[var(--primary-blue)] text-white py-20 px-6 lg:px-16 overflow-hidden relative border-t border-white/10 italic-serif">
@@ -100,7 +100,7 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-3">Atendimento</p>
             <p className="text-sm text-white/80 leading-relaxed font-sans font-medium cursor-default">
-              Segunda a Sexta: 08h às 18h <br /> Sábado: 08h às 13h
+              Segunda a Sexta: 08h às 18h
             </p>
           </div>
           <div className="flex flex-col items-center">
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Disclaimer / Credentials */}
         <div className="max-w-2xl border-t border-white/10 pt-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <p className="text-[var(--neutral-silver)]/60 font-sans text-sm mb-6 leading-relaxed">
-            Dr. Paulo Massahud – CRM 12.345 / RQE 6.789 <br />
+            Dr. Paulo Massahud – CRM 30.491 / RQE 56695 <br />
             As informações contidas neste site têm caráter informativo e não substituem a consulta médica.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-[10px] font-sans uppercase tracking-[0.2em] text-white/30 font-bold">

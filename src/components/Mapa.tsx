@@ -57,7 +57,7 @@ const Mapa = () => {
               </div>
               <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-[var(--neutral-gray)] font-bold mb-1">Horário de Agendamento</p>
-                <p className="text-xl text-slate-700 leading-tight">Segunda a Sexta 08:00h às 18:00h <br /> Sábado de 08:00h às 13:00h</p>
+                <p className="text-xl text-slate-700 leading-tight">Segunda a Sexta 08:00h às 18:00h</p>
               </div>
             </div>
           </div>

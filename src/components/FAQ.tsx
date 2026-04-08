@@ -31,7 +31,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Os exames incluem o estudo com Doppler?",
-      answer: "Sim! Por ser um padrão de excelência da nossa clínica, todos os exames realizados já incluem o estudo com Doppler (estudo da circulação). Isso garante uma avaliação completa da saúde e do bem-estar do seu bebê, sem custos adicionais."
+      answer: "Sim! Por ser um padrão de excelência da nossa clínica, 100% dos exames gestacionais já incluem o estudo com Doppler (estudo da circulação). Isso garante uma avaliação completa da saúde e do bem-estar do seu bebê, sem custos adicionais. Para exames de saúde geral, o Doppler é realizado conforme indicação clínica."
     },
     {
       question: "O agendamento é rápido e humanizado?",
@@ -43,7 +43,7 @@ const FAQ = () => {
     },
     {
       question: "Como e quando recebo os resultados dos exames?",
-      answer: "Você sai da clínica com o laudo impresso e as melhores fotos em mãos. Além disso, disponibilizamos as imagens digitais de alta qualidade para que você possa compartilhar com sua família e guardar esse registro para sempre."
+      answer: "Você sai da clínica com o laudo impresso e as melhores fotos em mãos. Além disso, disponibilizamos a opção para gravar seus ultrassons (consulte valor da gravação) para que você possa compartilhar com sua família e guardar esse registro para sempre."
     },
     {
       question: "O Dr. Paulo Massahud atende casos de alta complexidade?",
@@ -51,7 +51,7 @@ const FAQ = () => {
     },
     {
       question: "Quais são as formas de pagamento e convênios?",
-      answer: "Atendemos os principais convênios da região (Unimed, Cassi, Bradesco) e também oferecemos condições especiais para atendimentos particulares, com facilidade no parcelamento. Consulte sua operadora via WhatsApp."
+      answer: "Nossa clínica realiza exclusivamente atendimentos particulares para garantir a agilidade e o tempo necessário para um diagnóstico minucioso. Aceitamos pagamentos em Dinheiro, Pix e cartões de Débito/Crédito."
     }
   ];
 

@@ -8,8 +8,8 @@
   --color-neutral-silver: #E2E8F0;
   --color-bg-soft-blue: #F4F7FA;
 
-  --font-sans: var(--font-open), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-darker), serif;
+  --font-sans: var(--font-massahud-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-massahud-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
   @keyframes fade-in-up {
     from {
@@ -80,8 +80,8 @@
 }
 
 @layer base {
-  body {
-    @apply bg-white text-[var(--primary-blue)] font-sans antialiased;
+  html, body {
+    @apply bg-white text-[var(--primary-blue)] font-sans antialiased overflow-x-hidden w-full max-w-[100vw];
   }
 }
 

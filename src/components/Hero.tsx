@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Baby, Activity } from "lucide-react";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -31,42 +32,7 @@ const StarIcon = ({ className }: { className?: string }) => (
 
 // GoogleRatingBadge removido para integração inline com o CTA
 
-const Particle = ({ i }: { i: number }) => {
-  const [mounted, setMounted] = React.useState(false);
-  const [randomValues, setRandomValues] = React.useState({
-    duration: 20,
-    initialX: 50,
-    drift: 0,
-  });
 
-  React.useEffect(() => {
-    setRandomValues({
-      duration: 15 + Math.random() * 15,
-      initialX: Math.random() * 100,
-      drift: Math.random() * 10 - 5,
-    });
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  return (
-    <motion.div
-      className="absolute w-1.5 h-1.5 rounded-full bg-[#E8E1B9] blur-[1px] opacity-50 select-none pointer-events-none"
-      initial={{ x: `${randomValues.initialX}vw`, y: "100vh" }}
-      animate={{
-        y: "-10vh",
-        x: [`${randomValues.initialX}vw`, `${randomValues.initialX + randomValues.drift}vw`],
-      }}
-      transition={{
-        duration: randomValues.duration,
-        repeat: Infinity,
-        ease: "linear",
-        delay: i * 0.5,
-      }}
-    />
-  );
-};
 
 const Hero = () => {
   const targetRef = useRef(null);
@@ -93,7 +59,7 @@ const Hero = () => {
           <img
             src="/images/IMG_7973.webp" 
             alt="Dr. Paulo Massahud"
-            className="w-full h-full object-cover object-[56%] lg:object-[95%_25%]"
+            className="w-full h-full object-cover object-[75%] lg:object-[95%_25%]"
           />
         </motion.div>
 
@@ -103,80 +69,83 @@ const Hero = () => {
           aria-hidden="true"
         />
 
-        {/* Ambient Particles Overlay for depth */}
-        <div className="absolute inset-0 z-30 pointer-events-none">
-          {[...Array(40)].map((_, i) => (
-            <Particle key={i} i={i} />
-          ))}
-        </div>
+
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-40 flex flex-col items-start justify-center h-full">
+      <div className="max-w-7xl mx-auto w-full relative z-40 flex flex-col items-center lg:items-start justify-center h-full">
         {/* Layer 3 & 4: Text Narrative & Actions */}
-        <div className="w-full lg:w-[65%] flex flex-col justify-center h-full gap-y-8 pt-4">
+        <div className="w-full lg:w-[65%] flex flex-col items-center lg:items-start justify-center h-full gap-y-8 pt-4">
           <div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl lg:text-7xl font-serif font-bold text-[var(--primary-blue)] leading-[0.95] mb-6 tracking-tight"
+              className="text-4xl lg:text-6xl font-serif font-bold text-[var(--primary-blue)] leading-[1.1] lg:leading-[0.9] mb-6 tracking-tight text-center lg:text-left"
             >
-              A segurança que sua <br /> família precisa <br />
-              <span className="text-[var(--accent-gold)] italic font-light">em cada batimento da vida que floresce em você.</span>
+              A segurança que você e sua <br className="hidden lg:block" /> família precisam para cuidar da sua <br className="hidden lg:block" />
+              <span className="text-[var(--accent-gold)] italic font-light">saúde e da sua gestação.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-base lg:text-lg text-[var(--neutral-gray)] font-sans leading-relaxed max-w-xl"
+              className="text-base lg:text-lg text-[var(--neutral-gray)] font-sans leading-relaxed max-w-xl text-center lg:text-left"
             >
               Referência em Saúde do seu Bebê e diagnósticos de alta complexidade. O Dr. Paulo Massahud aplica o mais alto rigor técnico e tecnologia de última geração para assegurar laudos precisos e um acompanhamento minucioso de cada etapa gestacional, priorizando a segurança clínica indispensável para você e seu bebê.
             </motion.p>
           </div>
 
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-slate-100 px-4 py-2 rounded-full mb-2 w-fit mx-auto lg:mx-0"
+          >
+            <div className="flex gap-0.5 text-[#FBBC05]">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon key={i} className="w-3.5 h-3.5" />
+              ))}
+            </div>
+            <span className="text-[10px] font-bold text-[var(--primary-blue)] uppercase tracking-wider">
+              Clínica Nota 5.0 no Google
+            </span>
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap items-center gap-6"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6"
           >
             <a
-              id="cta-hero-whatsapp"
-              href="https://wa.me/553136435473?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Paulo%20Massahud."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[var(--primary-blue)] text-white px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-xl hover:shadow-2xl hover:bg-[#1a355d] hover:scale-105 active:scale-95 transition-all duration-500 group"
+              id="cta-hero-gestacional"
+              href="#exames"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.location.hash = 'exames';
+                  window.dispatchEvent(new CustomEvent('setExamTab', { detail: 'baby' }));
+                }
+              }}
+              className="bg-[var(--primary-blue)] text-white px-8 lg:px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-xl hover:shadow-2xl hover:bg-[#1a355d] hover:scale-105 active:scale-95 transition-all duration-500 group"
             >
-              <WhatsAppIcon className="w-5 h-5 transition-transform group-hover:rotate-12" />
-              <span>Agendar consulta com o Dr. Paulo</span>
+              <Baby className="w-5 h-5 transition-transform group-hover:rotate-12 text-[var(--accent-gold)]" />
+              <span>Exames Gestacionais</span>
             </a>
 
             <a
-              id="cta-hero-google"
-              href="https://www.google.com/maps/place/Massahud+Diagn%C3%B3sticos+Ltda/@-19.9283077,-43.9205385,17z/data=!4m8!3m7!1s0xa6996255b40aad:0xdc5d6c977a1cd3e2!8m2!3d-19.9283077!4d-43.9205385!9m1!1b1!16s%2Fg%2F11st_h59yx?hl=pt-BR&entry=ttu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white/50 backdrop-blur-sm px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:bg-white transition-all border border-white/20 group"
+              id="cta-hero-geral"
+              href="#exames"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.location.hash = 'exames';
+                  window.dispatchEvent(new CustomEvent('setExamTab', { detail: 'general' }));
+                }
+              }}
+              className="bg-white text-[var(--primary-blue)] border-2 border-[var(--primary-blue)]/10 px-8 lg:px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-md hover:shadow-lg hover:border-[var(--primary-blue)]/30 hover:scale-105 active:scale-95 transition-all duration-500 group"
             >
-              <GoogleIcon className="w-5 h-5" />
-              <div className="flex flex-col">
-                <div className="flex gap-0.5 text-[#FBBC05] mb-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <StarIcon key={i} className="w-3.5 h-3.5" />
-                  ))}
-                </div>
-                <span className="text-[10px] font-bold text-[var(--primary-blue)] uppercase tracking-wider">
-                  Avaliação 5.0 no Google
-                </span>
-              </div>
-            </a>
-
-            <a
-              href="#especialista"
-              className="text-[10px] lg:text-xs font-sans font-bold uppercase tracking-[0.2em] text-[var(--primary-blue)] border-b-2 border-[var(--primary-blue)]/20 pb-1 hover:border-[var(--primary-blue)] transition-colors duration-300"
-            >
-              Conhecer abordagem
+              <Activity className="w-5 h-5 transition-transform group-hover:scale-110 text-[var(--accent-gold)]" />
+              <span>Saúde Geral e Preventiva</span>
             </a>
           </motion.div>
         </div>
@@ -184,6 +153,19 @@ const Hero = () => {
 
       {/* Hero Bottom Shadow */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-50" />
+
+      {/* Floating Service Badge - Flutuando à direita embaixo */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+        className="fixed bottom-8 right-6 z-[100] hidden sm:flex items-center gap-2 bg-white/80 backdrop-blur-md border border-[var(--primary-blue)]/20 px-5 py-3 rounded-2xl shadow-2xl"
+      >
+        <div className="w-2.5 h-2.5 rounded-full bg-[var(--accent-gold)] animate-pulse" />
+        <span className="text-[10px] font-sans font-black text-[var(--primary-blue)] uppercase tracking-widest whitespace-nowrap">
+          Atendimento Particular • Não atendemos convênios
+        </span>
+      </motion.div>
     </section>
   );
 };

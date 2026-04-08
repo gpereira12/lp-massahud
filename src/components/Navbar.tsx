@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
 // ... (mantenha o resto)
@@ -25,7 +26,7 @@ export const WhatsAppButton = ({
 }: { 
   children: React.ReactNode; 
   className?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "gold";
   style?: any;
   id?: string;
 }) => {
@@ -34,11 +35,12 @@ export const WhatsAppButton = ({
   const variants = {
     primary: "bg-[var(--primary-blue)] text-white hover:bg-[#1a355d] px-8 py-4 rounded-2xl",
     secondary: "bg-[var(--primary-blue)] text-white hover:bg-[#1a355d] px-8 py-4 rounded-2xl",
+    gold: "bg-[var(--accent-gold)] text-[var(--primary-blue)] hover:bg-[#A69D24] px-8 py-4 rounded-2xl shadow-[#A69D24]/20",
   };
 
   return (
     <motion.a
-      href="https://wa.me/553136435473?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Paulo%20Massahud." 
+      href="https://wa.me/553136435473?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20exame%20com%20o%20Dr.%20Paulo%20Massahud." 
       target="_blank"
       id={id} // Aplicando o ID para o GTM
       rel="noopener noreferrer"
@@ -110,21 +112,28 @@ const Navbar = () => {
         />
 
         <div className="flex items-center">
-          <a href="/" className="block">
+          <a href="/" className="relative block">
             {/* Full Logo - Desktop */}
-            <motion.img 
-              style={{ height: logoHeight }}
-              src="/images/logos/logo-navbar.png" 
-              alt="Massahud Diagnósticos" 
-              className="hidden sm:block w-auto"
-            />
+            <motion.div style={{ height: logoHeight }} className="hidden sm:block relative w-48">
+              <Image 
+                src="/images/logos/logo-navbar.png" 
+                alt="Massahud Diagnósticos" 
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 200px"
+                className="object-contain object-left"
+              />
+            </motion.div>
             {/* Symbol - Mobile */}
-            <motion.img 
-              style={{ height: logoHeight }}
-              src="/images/logos/simbolo.png" 
-              alt="M" 
-              className="sm:hidden block w-auto"
-            />
+            <motion.div style={{ height: logoHeight }} className="sm:hidden block relative w-12">
+              <Image 
+                src="/images/logos/simbolo.png" 
+                alt="M" 
+                fill
+                sizes="48px"
+                className="object-contain object-left"
+              />
+            </motion.div>
           </a>
         </div>
 
