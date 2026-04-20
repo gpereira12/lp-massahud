@@ -16,7 +16,7 @@ const TestimonialCard = ({ quote, author }: { quote: string; author: string }) =
       </div>
       <div className="flex flex-col">
         <span className="font-bold text-white tracking-widest uppercase text-[10px]">{author}</span>
-        <span className="text-[10px] text-white/40 uppercase tracking-widest font-bold">Paciente</span>
+        <span className="text-[10px] text-white/70 uppercase tracking-widest font-bold">Paciente</span>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@ const Clinica = () => {
   ];
 
   return (
-    <section id="clinica" className="bg-[var(--primary-blue)] text-white py-24 px-6 lg:px-16 overflow-hidden relative">
+    <section id="clinica" className="bg-[var(--primary-blue)] text-white py-16 lg:py-24 px-6 lg:px-16 overflow-hidden relative">
       {/* Decorative radial gradient */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--accent-gold)]/5 rounded-full blur-[120px] -z-0"></div>
       
@@ -77,7 +77,7 @@ const Clinica = () => {
 
           {/* Column 2 - Row 1: Intro Text */}
           <div className="flex flex-col justify-center animate-fade-in-up p-4" style={{ animationDelay: '0.1s' }}>
-            <span className="uppercase text-[var(--accent-gold)] text-sm tracking-[0.3em] mb-6 font-bold font-sans">
+            <span className="uppercase text-[#A69D24] text-sm tracking-[0.3em] mb-6 font-bold font-sans">
               Nossa Clínica
             </span>
             <h2 className="text-4xl font-serif font-black mb-6 tracking-tight leading-tight">

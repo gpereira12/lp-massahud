@@ -44,7 +44,7 @@ const Hero = () => {
   return (
     <section 
       ref={targetRef}
-      className="min-h-screen flex items-center bg-white relative overflow-hidden px-6 lg:px-16 pt-32 pb-20"
+      className="min-h-screen flex items-center bg-white relative overflow-hidden px-6 lg:px-16 pt-24 lg:pt-32 pb-12 lg:pb-20"
     >
 
 
@@ -59,31 +59,40 @@ const Hero = () => {
           <img
             src="/images/IMG_7973.webp" 
             alt="Dr. Paulo Massahud"
-            className="w-full h-full object-cover object-[75%] lg:object-[95%_25%]"
+            className="w-full h-full object-cover object-[center_top] lg:object-[95%_25%]"
           />
         </motion.div>
 
-        {/* Dynamic Gradient Overlay for Text Legibility */}
+        {/* Dynamic Gradient Overlay: Vertical on mobile (softer), Horizontal on desktop */}
         <div 
-          className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10"
+          className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/20 to-transparent lg:bg-gradient-to-r lg:from-white lg:via-white/80 lg:to-transparent z-10"
           aria-hidden="true"
         />
-
-
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-40 flex flex-col items-center lg:items-start justify-center h-full">
         {/* Layer 3 & 4: Text Narrative & Actions */}
-        <div className="w-full lg:w-[65%] flex flex-col items-center lg:items-start justify-center h-full gap-y-8 pt-4">
+        <div className="w-full lg:w-[65%] flex flex-col items-center lg:items-start justify-center h-full gap-y-8 pt-4 px-4 py-8 lg:p-0 bg-white/10 lg:bg-transparent backdrop-blur-[2px] lg:backdrop-blur-none rounded-[2rem] lg:rounded-none border border-white/20 lg:border-none shadow-xl shadow-white/10 lg:shadow-none">
           <div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl lg:text-6xl font-serif font-bold text-[var(--primary-blue)] leading-[1.1] lg:leading-[0.9] mb-6 tracking-tight text-center lg:text-left"
+              className="text-4xl lg:text-6xl font-serif font-bold text-[var(--primary-blue)] leading-[1.1] lg:leading-[0.9] mb-6 tracking-tight text-center lg:text-left drop-shadow-[0_2px_10px_rgba(255,255,255,1)] lg:drop-shadow-none"
             >
-              A segurança que você e sua <br className="hidden lg:block" /> família precisam para cuidar da sua <br className="hidden lg:block" />
-              <span className="text-[var(--accent-gold)] italic font-light">saúde e da sua gestação.</span>
+              <span className="lg:hidden">A segurança que você precisa para cuidar da sua <br /></span>
+              <span className="hidden lg:inline">A segurança que você e sua <br className="hidden lg:block" /> família precisam para cuidar da sua <br className="hidden lg:block" /></span>
+              <span className="relative inline-block">
+                <span className="text-primary italic font-bold drop-shadow-[0_2px_15px_rgba(201,193,44,0.35)]">
+                  saúde e da sua gestação<span className="hidden lg:inline">.</span>
+                </span>
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 1.5, ease: "circOut" }}
+                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-[#AAAFB5] to-transparent origin-left rounded-full"
+                />
+              </span>
             </motion.h1>
 
             <motion.p
@@ -100,7 +109,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex items-center gap-2 bg-white/60 backdrop-blur-sm border border-slate-100 px-4 py-2 rounded-full mb-2 w-fit mx-auto lg:mx-0"
+            className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-slate-100 px-4 py-2 rounded-full mb-2 w-fit mx-auto lg:mx-0 shadow-sm"
           >
             <div className="flex gap-0.5 text-[#FBBC05]">
               {[...Array(5)].map((_, i) => (
@@ -127,7 +136,7 @@ const Hero = () => {
                   window.dispatchEvent(new CustomEvent('setExamTab', { detail: 'baby' }));
                 }
               }}
-              className="bg-[var(--primary-blue)] text-white px-8 lg:px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-xl hover:shadow-2xl hover:bg-[#1a355d] hover:scale-105 active:scale-95 transition-all duration-500 group"
+              className="bg-[var(--primary-blue)] text-white px-8 lg:px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-xl hover:shadow-2xl hover:bg-[#1a355d] hover:scale-105 active:scale-95 transition-all duration-500 group w-full sm:w-auto justify-center"
             >
               <Baby className="w-5 h-5 transition-transform group-hover:rotate-12 text-[var(--accent-gold)]" />
               <span>Exames Gestacionais</span>
@@ -142,7 +151,7 @@ const Hero = () => {
                   window.dispatchEvent(new CustomEvent('setExamTab', { detail: 'general' }));
                 }
               }}
-              className="bg-white text-[var(--primary-blue)] border-2 border-[var(--primary-blue)]/10 px-8 lg:px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-md hover:shadow-lg hover:border-[var(--primary-blue)]/30 hover:scale-105 active:scale-95 transition-all duration-500 group"
+              className="bg-white text-[var(--primary-blue)] border-2 border-[var(--primary-blue)]/10 px-8 lg:px-10 py-5 rounded-2xl font-sans font-extrabold flex items-center gap-3 shadow-md hover:shadow-lg hover:border-[var(--primary-blue)]/30 hover:scale-105 active:scale-95 transition-all duration-500 group w-full sm:w-auto justify-center"
             >
               <Activity className="w-5 h-5 transition-transform group-hover:scale-110 text-[var(--accent-gold)]" />
               <span>Saúde Geral e Preventiva</span>

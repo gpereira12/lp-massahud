@@ -51,9 +51,9 @@ const ExamDetailCard = ({
         )}
       </div>
 
-      <h4 className="text-[var(--primary-blue)] font-serif font-bold text-xl mb-3 leading-tight group-hover:text-[var(--accent-gold)] transition-colors">
+      <h3 className="text-[var(--primary-blue)] font-serif font-bold text-xl mb-3 leading-tight group-hover:text-[var(--accent-gold)] transition-colors">
         {title}
-      </h4>
+      </h3>
       <p className="text-slate-500 text-sm leading-relaxed font-sans line-clamp-3 group-hover:text-slate-600 transition-colors">
         {description}
       </p>
@@ -111,7 +111,7 @@ const Exames = () => {
   ];
 
   return (
-    <section id="exames" className="bg-white pt-24 pb-16 px-6 lg:px-16 overflow-hidden relative">
+    <section id="exames" className="bg-white pt-16 lg:pt-24 pb-12 lg:pb-16 px-6 lg:px-16 overflow-hidden relative">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#11233E 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
@@ -185,9 +185,9 @@ const Exames = () => {
                 className="lg:col-span-1 bg-[var(--primary-blue)] rounded-[2.5rem] p-10 text-white relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[220px]"
               >
                 <div className="relative z-10">
-                  <h4 className="text-2xl font-serif italic mb-3 leading-tight">
+                  <h3 className="text-2xl font-serif italic mb-3 leading-tight">
                     Não encontrou <br />seu exame?
-                  </h4>
+                  </h3>
                   <p className="text-blue-100/70 text-sm mb-6 font-sans">
                     Nossa equipe técnica pode confirmar disponibilidade e modalidades específicas para você.
                   </p>

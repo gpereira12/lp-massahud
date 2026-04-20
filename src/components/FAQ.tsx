@@ -56,7 +56,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="bg-[var(--bg-soft-blue)] py-24 px-6 lg:px-16 overflow-hidden">
+    <section id="faq" className="bg-[var(--bg-soft-blue)] py-16 lg:py-24 px-6 lg:px-16 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-[var(--primary-blue)] text-4xl lg:text-5xl font-normal text-center mb-16 tracking-tight animate-fade-in-up">
           Ficou alguma dúvida?

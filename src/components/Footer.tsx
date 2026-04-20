@@ -60,6 +60,7 @@ const Footer = () => {
             href="https://www.instagram.com/massahuddiagnosticos/" 
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Siga-nos no Instagram"
             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-500"
           >
             <InstagramIcon className="w-5 h-5" />
@@ -68,6 +69,7 @@ const Footer = () => {
             href="https://www.facebook.com/massahuddiagnosticos" 
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Siga-nos no Facebook"
             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-500"
           >
             <FacebookIcon className="w-5 h-5" />
@@ -77,6 +79,7 @@ const Footer = () => {
             href={whatsappUrl}
             target="_blank" 
             rel="noopener noreferrer"
+            aria-label="Falar conosco pelo WhatsApp"
             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-500"
           >
             <WhatsAppIcon className="w-5 h-5" />
@@ -126,7 +129,7 @@ const Footer = () => {
                 href="https://dev-gabriel-pereira-gp.web.app/criacao-de-landing-pages" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-white/50 hover:text-[var(--accent-gold)] transition-colors"
+                className="text-white/80 hover:text-[var(--accent-gold)] transition-colors"
               >
                 Gabriel Pereira
               </a>

@@ -17,7 +17,6 @@ export default function Home() {
       <Hero />
       <Especialista />
       <Exames />
-      <Transition />
       <Diferenciais />
       <Clinica />
       <FAQ />

@@ -2,11 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 import { WhatsAppButton } from "./Navbar";
 
 const Especialista = () => {
   return (
-    <section id="especialista" className="relative bg-white text-[var(--primary-blue)] py-24 px-6 lg:px-16 overflow-hidden">
+    <section id="especialista" className="relative bg-white text-[var(--primary-blue)] py-16 lg:py-24 px-6 lg:px-16 overflow-hidden">
       {/* Max Intensity Background Liquid Mesh */}
       <div 
         className="absolute inset-0 opacity-80 pointer-events-none -z-10 animate-liquid-mesh"
@@ -27,12 +28,12 @@ const Especialista = () => {
         
         {/* Left Side: Text/Content */}
         <div className="w-full lg:w-[55%] flex flex-col items-start animate-fade-in-up">
-          <span className="uppercase text-[var(--accent-gold)] text-sm tracking-[0.3em] mb-6 font-bold font-sans">
+          <span className="uppercase text-[#A69D24] text-sm tracking-[0.3em] mb-6 font-bold font-sans">
             O Especialista
           </span>
           
           <h2 className="text-5xl font-serif font-black leading-tight mb-8 tracking-tight">
-            Expertise e <span className="italic font-bold text-[var(--accent-gold)]">Humanização</span>
+            Expertise e <span className="italic font-bold text-[#A69D24]">Humanização</span>
           </h2>
 
           <div className="mb-8">
@@ -70,7 +71,7 @@ const Especialista = () => {
           >
              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/images/IMG_5922.webp" 
+                  src="/images/IMG_9999.webp" 
                   alt="Dr. Paulo Massahud" 
                   className="w-full aspect-[4/3] object-cover"
                 />
@@ -88,36 +89,26 @@ const Especialista = () => {
             />
             {/* Elegant overlay / frame */}
             {/* Enhanced Contrast & Liquid Effect Overlay */}
-            <div className="absolute inset-x-8 bottom-8 p-8 rounded-[2rem] overflow-hidden border border-white/30 shadow-2xl group/card">
-              {/* Liquid Backdrop Animation */}
-              <motion.div 
-                animate={{
-                  scale: [1, 1.3, 1],
-                  rotate: [0, 120, 0],
-                  borderRadius: ["30%", "50%", "30%"]
-                }}
-                transition={{
-                  duration: 12,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-gradient-to-tr from-[var(--accent-gold)]/50 via-white/80 to-[var(--primary-blue)]/20 blur-3xl -z-10"
-              />
-              
-              {/* Main Backdrop Blur & Glass Effect */}
-              <div className="absolute inset-0 bg-white/75 backdrop-blur-[100px] -z-10" />
+            <div 
+              className="absolute inset-x-6 bottom-6 lg:inset-y-auto lg:bottom-12 lg:right-12 lg:left-auto lg:w-[420px] p-8 lg:p-10 rounded-[2.5rem] overflow-hidden border border-white/40 shadow-[0_20px_60px_rgba(31,62,110,0.15)] group/card bg-white/40 backdrop-blur-3xl transition-all duration-500 hover:scale-[1.02]"
+            >
+              {/* Decorative Quote Icon - Soft Blue Tint */}
+              <Quote className="absolute -top-4 -right-4 w-32 h-32 text-[var(--primary-blue)]/5 -rotate-12 pointer-events-none group-hover/card:text-[var(--accent-gold)]/10 transition-colors duration-1000" />
 
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="drop-shadow-sm"
+                className="relative z-10"
               >
-                <p className="text-[10px] uppercase tracking-[0.4em] text-[var(--primary-blue)] font-bold mb-3">
-                  Referência em Diagnósticos
-                </p>
-                <div className="h-[2px] w-12 bg-[var(--accent-gold)] mb-4"></div>
-                <p className="text-[var(--primary-blue)] font-serif italic text-base lg:text-lg leading-relaxed font-medium">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="h-[1.5px] w-8 bg-[var(--accent-gold)]"></div>
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-[var(--primary-blue)] font-bold opacity-80">
+                    Referência em Diagnósticos
+                  </p>
+                </div>
+                
+                <p className="text-[var(--primary-blue)] font-serif italic text-lg lg:text-xl leading-[1.5] font-semibold">
                   "Cuidando da vida em seus primeiros momentos."
                 </p>
               </motion.div>

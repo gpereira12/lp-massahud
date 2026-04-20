@@ -54,10 +54,10 @@ const Diferenciais = () => {
   ];
 
   return (
-    <section id="diferenciais" className="bg-[#FBFCFE] py-32 px-6 lg:px-16 relative overflow-hidden">
+    <section id="diferenciais" className="bg-[#FBFCFE] py-16 lg:py-32 px-6 lg:px-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-20">
         <div className="text-center mb-24 animate-fade-in-up">
-          <span className="uppercase text-[var(--accent-gold)] text-sm tracking-[0.3em] mb-6 font-bold font-sans block">
+          <span className="uppercase text-[#A69D24] text-sm tracking-[0.3em] mb-6 font-bold font-sans block">
             Nossa Essência
           </span>
           <h2 className="text-4xl lg:text-6xl text-[var(--primary-blue)] font-serif font-bold tracking-tight leading-tight">

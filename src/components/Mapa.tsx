@@ -5,13 +5,14 @@ import { MapPin, Phone, Clock, ExternalLink } from "lucide-react";
 
 const Mapa = () => {
   return (
-    <section id="mapa" className="bg-white py-24 px-6 lg:px-16 overflow-hidden">
+    <section id="mapa" className="bg-white py-16 lg:py-24 px-6 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
         
         {/* Left Side: Map iframe */}
         <div className="w-full lg:w-1/2 animate-fade-in-up">
           <div className="w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-[var(--neutral-silver)]/20 relative group">
             <iframe 
+              title="Localização da clínica Massahud no Google Maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.054322589417!2d-43.92211512398505!3d-19.928307681454523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6996255b40aad%3A0xdc5d6c977a1cd3e2!2sMassahud%20Diagn%C3%B3sticos%20Ltda!5e0!3m2!1spt-BR!2sbr!4v1711910000000!5m2!1spt-BR!2sbr" 
               width="100%" 
               height="100%" 
