@@ -85,16 +85,13 @@ const Especialista = () => {
             <img
               src="/images/IMG_7977.webp" 
               alt="Dr. Paulo Massahud"
-              className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Elegant overlay / frame */}
             {/* Enhanced Contrast & Liquid Effect Overlay */}
             <div 
               className="absolute inset-x-6 bottom-6 lg:inset-y-auto lg:bottom-12 lg:right-12 lg:left-auto lg:w-[420px] p-8 lg:p-10 rounded-[2.5rem] overflow-hidden border border-white/40 shadow-[0_20px_60px_rgba(31,62,110,0.15)] group/card bg-white/40 backdrop-blur-3xl transition-all duration-500 hover:scale-[1.02]"
             >
-              {/* Decorative Quote Icon - Soft Blue Tint */}
-              <Quote className="absolute -top-4 -right-4 w-32 h-32 text-[var(--primary-blue)]/5 -rotate-12 pointer-events-none group-hover/card:text-[var(--accent-gold)]/10 transition-colors duration-1000" />
-
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +105,7 @@ const Especialista = () => {
                   </p>
                 </div>
                 
-                <p className="text-[var(--primary-blue)] font-serif italic text-lg lg:text-xl leading-[1.5] font-semibold">
+                <p className="text-[var(--primary-blue)] font-serif italic text-lg lg:text-xl leading-[1] font-semibold">
                   "Cuidando da vida em seus primeiros momentos."
                 </p>
               </motion.div>
